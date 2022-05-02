@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :tramway_bots_telegram_chat, class: 'Tramway::Bots::Telegram::Chat' do
     telegram_chat_id { generate :string }
 
-    factory :bot_telegram_private_chat, traits: [:private]
+    factory :tramway_bots_telegram_private_chat, traits: [:private]
 
     trait :private do
       chat_type { :private }
