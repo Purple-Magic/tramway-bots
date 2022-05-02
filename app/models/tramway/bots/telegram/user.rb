@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
-class Tramway::Bots::Telegram::User < Tramway::Core::ApplicationRecord
-  self.table_name = :bot_telegram_users
-
-  has_many :messages, class_name: 'BotTelegram::Message'
-  has_many :progress_records, class_name: 'BotTelegram::Scenario::ProgressRecord', foreign_key: :bot_telegram_user_id
-  has_many :steps, class_name: 'BotTelegram::Scenario::Step', through: :progress_records
-  has_many :bots, class_name: 'Bot', through: :steps
-  has_many :states, class_name: 'BotTelegram::Users::State'
+class Tramway::Bots::Telegram::User < ApplicationRecord
+  has_many :messages, class_name: 'Tramway::Bots::Telegram::Message'
+  has_many :bots, class_name: 'Tramway::Bots::Bot', through: :steps
+  has_many :states, class_name: 'Tramway::Bots::Telegram::Users::State'
 
   validates :telegram_id, uniqueness: true
   validates :username, uniqueness: true, allow_blank: true, allow_nil: true

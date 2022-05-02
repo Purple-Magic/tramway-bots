@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Bots::Telegram::Message < Tramway::Core::ApplicationRecord
-  self.table_name = :bot_telegram_messages
-
+class Tramway::Bots::Telegram::Message < ApplicationRecord
   belongs_to :user, class_name: 'BotTelegram::User', optional: true
   belongs_to :bot, class_name: 'Bot', optional: true
   belongs_to :chat, class_name: 'BotTelegram::Chat', optional: true

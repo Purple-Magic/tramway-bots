@@ -2,7 +2,7 @@
 
 class CreateTramwayBotsTelegramChats < ActiveRecord::Migration[5.1]
   def change
-    create_table :tramway_bot_engine_telegram_chats do |t|
+    create_table :tramway_bots_telegram_chats do |t|
       t.text :title
       t.text :chat_type
       t.jsonb :options

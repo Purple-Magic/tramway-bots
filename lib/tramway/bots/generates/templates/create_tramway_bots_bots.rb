@@ -2,7 +2,7 @@
 
 class CreateTramwayBotsBots < ActiveRecord::Migration[5.1]
   def change
-    create_table :tramway_bot_engine_bots do |t|
+    create_table :tramway_bots_bots do |t|
       t.text :name
       t.text :state
       t.text :team
