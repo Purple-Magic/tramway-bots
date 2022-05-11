@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Tramway::Bots::Telegram::User < ApplicationRecord
+  self.table_name = 'tramway_bots_telegram_users'
+
   has_many :messages, class_name: 'Tramway::Bots::Telegram::Message'
   has_many :bots, class_name: 'Tramway::Bots::Bot', through: :steps
   has_many :states, class_name: 'Tramway::Bots::Telegram::Users::State'
