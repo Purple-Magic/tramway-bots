@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'telegram/bot'
 require 'tramway/bots/telegram/messages_manager'
 
 module Tramway::Bots::Telegram::Custom::Notify::Text
