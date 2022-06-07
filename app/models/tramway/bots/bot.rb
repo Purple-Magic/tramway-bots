@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Bots::Bot < Tramway::Core::ApplicationRecord
+class Tramway::Bots::Bot < ApplicationRecord
   has_many :scenario_steps, -> { order(:name) }, class_name: 'BotTelegram::Scenario::Step'
   has_many :progress_records, through: :scenario_steps, class_name: 'BotTelegram::Scenario::ProgressRecord'
   has_many :attenders, through: :progress_records, class_name: 'BotTelegram::User', source: :user

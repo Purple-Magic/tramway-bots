@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :tramway_bots_bot do
+  factory :tramway_bots_bot, class: 'Tramway::Bots::Bot' do
     name { generate :string }
     team { Bot.team.values.sample }
     token { generate :string }

@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-class Tramway::Bots::Telegram::Channel < Tramway::Core::ApplicationRecord
+class Tramway::Bots::Telegram::Channel < ApplicationRecord
 end

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class Tramway::Bots::Telegram::Message < Tramway::Core::ApplicationRecord
-  self.table_name = :bot_telegram_messages
+class Tramway::Bots::Telegram::Message < ApplicationRecord
+  self.table_name = 'tramway_bots_telegram_messages'
 
-  belongs_to :user, class_name: 'BotTelegram::User', optional: true
-  belongs_to :bot, class_name: 'Bot', optional: true
-  belongs_to :chat, class_name: 'BotTelegram::Chat', optional: true
+  belongs_to :user, class_name: 'Tramway::Bots::Telegram::User', optional: true
+  belongs_to :bot, class_name: 'Tramway::Bots::Bot', optional: true
+  belongs_to :chat, class_name: 'Tramway::Bots::Telegram::Chat', optional: true
 
   enumerize :message_type, in: %i[regular callback], default: :regular
 
